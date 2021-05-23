@@ -1,10 +1,11 @@
 
 # minGPT
 
+```
 >git clone https://github.com/michaellavelle/minGPT.git
 >cd minGPT
 >git submodule update --init --recursive
-
+```
 
 
 ![mingpt](mingpt.jpg)
