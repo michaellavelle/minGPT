@@ -1,0 +1,3 @@
+[submodule "ftnetpytorch"]
+	path = ftnetpytorch
+	url = https://github.com/rishikksh20/FNet-pytorch.git
