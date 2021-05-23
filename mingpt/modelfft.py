@@ -13,7 +13,7 @@ import logging
 import torch
 import torch.nn as nn
 
-from fnetpytorch.fnet import FNet
+from ftnetpytorch.fnet import FNet
 
 from torch.nn import functional as F
 
@@ -112,7 +112,7 @@ class GPT(nn.Module):
         self.pos_emb = nn.Parameter(torch.zeros(1, config.block_size, config.n_embd))
         self.drop = nn.Dropout(config.embd_pdrop)
         # transformer
-        self.blocks = nn.Sequential(*[FNet(128,1,128) for _ in range(config.n_layer)])
+        self.blocks = nn.Sequential(*[FNet(config.n_embd,config.n_layer,config.n_embd) for _ in range(config.n_layer)])
         # decoder head
         self.ln_f = nn.LayerNorm(config.n_embd)
         self.head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
